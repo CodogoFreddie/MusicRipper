@@ -1,0 +1,52 @@
+closed:
+  ElectroHouse: []
+  FutureBass: []
+  FutureSynth: []
+  Glitch: []
+  House: []
+  Trap: []
+fucked:
+  ElectroHouse: []
+  FutureBass: []
+  FutureSynth: []
+  Glitch: []
+  House: []
+  Trap: []
+open:
+  ElectroHouse: ["http://www.reddit.com/r/electrohouse/comments/344jhz/zedd_i_want_you_to_know_ft_selena_gomez_a\xB2\
+      _remix/", 'https://soundcloud.com/tinn_music/we-are-one-radio-edit', 'https://www.youtube.com/watch?v=Av9eeshkHy4',
+    'http://beattrax.com/2015/04/cavonius-jerry-rekonius-kaliber-electro-house-free-download/',
+    'https://soundcloud.com/itisimusic/it-is-i-the-art-of-saying-goodbye-tyler-anthony-remix',
+    'https://youtu.be/nPEEmcd7_TY', 'https://soundcloud.com/mistahan/tutumistahan',
+    'https://soundcloud.com/ignacio-official/who-made-this-bootleg/s-6VRBs', 'https://soundcloud.com/mash-d/baba-jaga',
+    'https://www.youtube.com/watch?v=iOLC5_BozqA']
+  FutureBass: ['https://soundcloud.com/shaunbitar/mix-1-future-vibes', 'https://www.youtube.com/watch?v=w-PAaNOM2UQ',
+    'https://soundcloud.com/otodayoruki/gill-chang-sunshine-for-two-1', 'https://soundcloud.com/cloudscollective/sam-gellaitry-temple-coastal-njord-flip-clouds-exclusive',
+    'https://youtu.be/8LMRM_BbDXc', 'http://soundcloud.com/noirsound/tkana', 'https://soundcloud.com/officialskuls/flume-insane-feat-moon-holiday-skuls-rip',
+    'https://soundcloud.com/heroicrecordings/dooqu-idc', 'https://soundcloud.com/vapeedm/vape-wavy-lp-premiere',
+    'https://soundcloud.com/sansvoir/around-here']
+  FutureSynth: ['https://www.youtube.com/watch?v=bN22Y1p1s-g', 'https://www.youtube.com/watch?v=Q2hLqPQqw9k',
+    'https://www.youtube.com/watch?v=jcZ-0o53md8', 'https://soundcloud.com/kondrath/still-aimless',
+    'https://soundcloud.com/pwrct/powercut-morning-swim', 'https://soundcloud.com/officialjdubmusic/ellie-goulding-love-me-like-you-do-jd-u-b-remix',
+    'https://soundcloud.com/dream-shore/motivation', 'https://www.youtube.com/watch?v=Mb5M2ZA-iwI',
+    'https://www.youtube.com/watch?v=vlUHC9Hswtg&amp;list=PLyIFQr1wryPJ-yUyeBcansxX093B9ug4y&amp;index=31',
+    'https://www.youtube.com/watch?v=-IahxEz0kmg']
+  Glitch: ['https://www.youtube.com/watch?v=NI81wm6coV8', 'http://www.alvanoto.com/?a1=audio',
+    'https://soundcloud.com/sakuraburst/data-corruption-symphony', 'https://sakuraburst.bandcamp.com/album/deconstructing-nature',
+    'https://robbyduguay.bandcamp.com/album/we-are-doomed-ost', 'https://soundcloud.com/innarythm-4-president/innarhythm-shoofly',
+    'https://youtu.be/dSpdKVqyR9g', 'https://soundcloud.com/innarythm-4-president/innarhythm-flowersy-vip',
+    'http://www.reddit.com/r/glitch/comments/31g8ue/solo_rp_method_126/', 'https://mosspark.bandcamp.com/album/leftover-pepper']
+  House: ['http://www.reddit.com/r/House/comments/33rwv5/everythign_from_random_globe_is_bs_bot_spam/',
+    'https://www.youtube.com/watch?v=QxzLEolVNzc', 'https://www.youtube.com/watch?v=BwG9nrX5Wz0',
+    'https://www.youtube.com/watch?v=Z_VKGXt24SA', 'https://soundcloud.com/fantomedenuit/patchwrk-fantome-de-nuit-podcast-007',
+    'https://soundcloud.com/michael-vieth/claptone-essential-mix-04-25-2015-tracklist',
+    'https://www.youtube.com/watch?v=04-Xi7VZv7s', 'https://soundcloud.com/thump/dirtytwo-moody-hnny-edit',
+    'https://www.youtube.com/watch?v=xWBWqjnWL2Q', 'https://www.youtube.com/watch?v=hU_Lsa1gcHg&amp;index=35&amp;list=PLbdoAT0N064QlVWDbxvWMWdn4cxo3KJYZ']
+  Trap: ['http://www.reddit.com/r/trap/comments/33lmkk/weekly_discussion_thread/',
+    'https://soundcloud.com/jackalproducer/jackals-coachella-mix-2015-free-download',
+    'http://www.reddit.com/r/trap/comments/344qvo/anyone_have_a_320_of_ego_by_mr_carmack/',
+    'http://www.reddit.com/r/trap/comments/345hu3/has_trap_given_anyone_else_a_true_appreciation/',
+    'https://soundcloud.com/xviiofficial/teaser-4-u', 'https://soundcloud.com/diskirz/tomsize-simeon-slender-diskirz',
+    'http://www.reddit.com/r/trap/comments/343w1l/is_there_a_name_for_that_weird_sssssssssss_sound/',
+    'https://soundcloud.com/tiwana864/bvng', 'https://soundcloud.com/ramzoid/jack-u-to-u-ramzoid-remix-1',
+    'https://soundcloud.com/boomboxcartel/warning-remix-nghtmre-slander']
