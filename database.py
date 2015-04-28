@@ -11,6 +11,14 @@ def initDB():
 
 	dbFile.close()
 
+def nextURLToDownload():
+	global db
+	for group in db["open"]:
+		while len(db["open"][group]) > 0:
+			yieldURL = db["open"][group][0]
+			yield (group, yieldURL)
+			db["open"][group] = db["open"][group][1:]
+
 def ensureGroupExists(group):
 	global db
 	if group not in db["open"].keys():
@@ -24,11 +32,11 @@ def addURL(urlString, group):
 	global db
 	ensureGroupExists(group)
 	if urlString in db["open"][group]:
-		print("allready marked to download", urlString)
+		print('\t' + "allready marked to download", urlString)
 	elif urlString in db["closed"][group]:
-		print("allready downloaded", urlString)
+		print('\t' + "allready downloaded", urlString)
 	elif urlString in db["fucked"][group]:
-		print("link is fucked", urlString)
+		print('\t' + "link is fucked", urlString)
 	else:
 		db["open"][group].append(urlString)
 
@@ -39,11 +47,11 @@ def markURLAsClosed(urlString, group):
 		db["open"][group].remove(urlString)
 		db["closed"][group].append(urlString)
 	elif urlString in db["closed"][group]:
-		print("allready downloaded", urlString)
+		print('\t' + "allready downloaded", urlString)
 	elif urlString in db["fucked"][group]:
-		print("link is fucked", urlString)
+		print('\t' + "link is fucked", urlString)
 	else:
-		print("not marked for downloading", urlString)
+		print('\t' + "not marked for downloading", urlString)
 
 def markURLAsFucked(urlString, group):
 	global db
@@ -51,13 +59,13 @@ def markURLAsFucked(urlString, group):
 	if urlString in db["open"][group]:
 		db["open"][group].remove(urlString)
 		db["fucked"][group].append(urlString)
-		print("marked as fucked", urlString)
+		print('\t' + "marked as fucked", urlString)
 	elif urlString in db["closed"][group]:
-		print("allready downloaded", urlString)
+		print('\t' + "allready downloaded", urlString)
 	elif urlString in db["fucked"][group]:
-		print("allready marked as fucked", urlString)
+		print('\t' + "allready marked as fucked", urlString)
 	else:
-		print("not marked for downloading", urlString)
+		print('\t' + "not marked for downloading", urlString)
 
 def saveDB():
 	global db
@@ -67,5 +75,5 @@ def saveDB():
 
 def printDB():
 	global db
-	print(db)
+	print('\t' + db)
 

@@ -1,4 +1,5 @@
 import praw
+import html
 
 r = praw.Reddit("Music URL harvester by /u/DrVonTrap")
 
@@ -7,9 +8,13 @@ def getHot(subReddit, n):
 	subreddit = r.get_subreddit(subReddit)
 	returnList = []
 	for submission in subreddit.get_hot(limit=n):
-		returnList = returnList + [submission.url]
-		# print(submission.url)
-		# print(submission.secure_media["oembed"]["provider_url"])
+		try:
+			print(str('\t' + submission.url))
+			if "reddit" not in submission.url:
+				returnList = returnList + [submission.url]
+		except:
+			print("\turl is fucked")
+			continue
 	return returnList
 
 def getTopAll(subReddit, n):
@@ -17,7 +22,13 @@ def getTopAll(subReddit, n):
 	subreddit = r.get_subreddit(subReddit)
 	returnList = []
 	for submission in subreddit.get_top_from_all(limit=n):
-		returnList = returnList + [submission.url]
+		try:
+			print(str('\t' + submission.url))
+			if "reddit" not in submission.url:
+				returnList = returnList + [submission.url]
+		except:
+			print("\turl is fucked")
+			continue
 	return returnList
 
 def getTopWeek(subReddit, n):
@@ -25,7 +36,13 @@ def getTopWeek(subReddit, n):
 	subreddit = r.get_subreddit(subReddit)
 	returnList = []
 	for submission in subreddit.get_top_from_week(limit=n):
-		returnList = returnList + [submission.url]
+		try:
+			print(str('\t' + submission.url))
+			if "reddit" not in submission.url:
+				returnList = returnList + [submission.url]
+		except:
+			print("\turl is fucked")
+			continue
 	return returnList
 
 def getTopMonth(subReddit, n):
@@ -33,5 +50,11 @@ def getTopMonth(subReddit, n):
 	subreddit = r.get_subreddit(subReddit)
 	returnList = []
 	for submission in subreddit.get_top_from_all(limit=n):
-		returnList = returnList + [submission.url]
+		try:
+			print(str('\t' + submission.url))
+			if "reddit" not in submission.url:
+				returnList = returnList + [submission.url]
+		except:
+			print("\turl is fucked")
+			continue
 	return returnList
