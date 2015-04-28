@@ -1,6 +1,8 @@
 import database
 import reddit
 import youtube_dl
+import imageLinker
+import os
 
 subReddits = ["FutureSynth", "FutureBass", "Glitch", "Trap", "House", "electrohouse"]
 # subReddits = ["electrohouse"]
@@ -26,7 +28,7 @@ def downloadURLs():
 
 	i = 0
 	for thing in database.nextURLToDownload():
-		i = i + 1
+		i = i + 3
 		if i > 1:
 			break
 		(group, url) = thing
@@ -48,7 +50,9 @@ def downloadURLs():
 			database.saveDB()
 			break
 
-		
+		imageLinker.addImagesToSongs(group)
+		os.system('cls')
+
 
 # gatherNewURLs()
 
