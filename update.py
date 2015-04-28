@@ -26,11 +26,7 @@ def gatherNewURLs():
 def downloadURLs():
 	database.initDB()
 
-	i = 0
 	for thing in database.nextURLToDownload():
-		i = i + 3
-		if i > 1:
-			break
 		(group, url) = thing
 
 
@@ -45,13 +41,17 @@ def downloadURLs():
 		try:
 			with youtube_dl.YoutubeDL(ydl_opts) as ydl:
 				ydl.download([url])
+
+			imageLinker.addImagesToSongs(group)
+
 		except:
 			database.markURLAsFucked(url, group)
 			database.saveDB()
-			break
+			continue;
 
-		imageLinker.addImagesToSongs(group)
-		os.system('cls')
+		database.markURLAsClosed(url, group)
+
+		os.system('cls' if os.name == 'nt' else 'clear')
 
 
 # gatherNewURLs()
