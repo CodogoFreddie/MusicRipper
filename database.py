@@ -12,11 +12,21 @@ def initDB():
 
 def nextURLToDownload():
 	global db
-	for group in db["open"]:
-		while len(db["open"][group]) > 0:
-			yieldURL = db["open"][group][0]
-			yield (group, yieldURL)
-			db["open"][group] = db["open"][group][1:]
+	while True:
+		for group in db["open"]:
+			if len(db["open"][group]) > 0:
+				yieldURL = db["open"][group][0]
+				yield (group, yieldURL)
+				db["open"][group] = db["open"][group][1:]
+			else:
+				anyLeft = False
+				for group in db["open"]:
+					if len(db["open"][group]) > 0:
+						anyLeft = True
+				if anyLeft:
+					continue
+				else:
+					break
 
 def ensureGroupExists(group):
 	global db
