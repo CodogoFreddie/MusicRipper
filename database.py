@@ -6,10 +6,9 @@ def initDB():
 	global db
 	dbFile = open("download.db", 'r')
 	db = yaml.load(dbFile)
+	dbFile.close()
 	if db == None:
 		db = {"open": dict([]), "closed": dict([]), "fucked": dict([])}
-
-	dbFile.close()
 
 def nextURLToDownload():
 	global db
