@@ -13,7 +13,7 @@ def addImagesToSongs(group, extension):
 
 	for tuple_ in artAndAudioTuple:
 		print("converting", tuple_)
-		subprocess.call(["lame", "--ti", str(tuple_[1]), "--tl", group, str(tuple_[0])])
+		subprocess.call(["lame", "--tg", str(tuple_[1]), "--tl", group, str(tuple_[0])])
 		subprocess.call(["rm", str(tuple_[1]), str(tuple_[0])])
 
 	subprocess.call(["mkdir", group, "-p"])
