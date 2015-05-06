@@ -1,13 +1,19 @@
 import yaml
+import subprocess
 
 db = {}
 
 def initDB():
 	global db
-	dbFile = open("download.db", 'r')
-	db = yaml.load(dbFile)
-	dbFile.close()
-	if db == None:
+	for i in range(2,7):
+		try:
+			dbFile = open("download.db." + str(i), 'r')
+			db = yaml.load(dbFile)
+			dbFile.close()
+			break
+		except:
+			continue
+	if len(db) == 0:
 		db = {"open": dict([]), "closed": dict([]), "fucked": dict([])}
 
 def nextURLToDownload():
@@ -26,7 +32,7 @@ def nextURLToDownload():
 				if anyLeft:
 					continue
 				else:
-					break
+					return
 
 def ensureGroupExists(group):
 	global db
@@ -76,9 +82,25 @@ def markURLAsFucked(urlString, group):
 	else:
 		print('\t' + "not marked for downloading", urlString)
 
+def reOpenAllClosed():
+	global db
+	# print(db)
+	for group in db["closed"]:
+		for item in db["closed"][group]:
+			print(item)
+			db["closed"][group].remove(item)
+			db["open"][group].append(item)
+	
+			
+
 def saveDB():
 	global db
-	dbFile = open("download.db", 'w')
+	subprocess.call(["cp", "download.db.5", "download.db.6"])
+	subprocess.call(["cp", "download.db.4", "download.db.5"])
+	subprocess.call(["cp", "download.db.3", "download.db.4"])
+	subprocess.call(["cp", "download.db.2", "download.db.3"])
+	subprocess.call(["cp", "download.db.1", "download.db.2"])
+	dbFile = open("download.db.1", 'w')
 	yaml.dump(db, dbFile)
 	dbFile.close()
 

@@ -1,27 +1,28 @@
 import database
 import reddit
 import youtube_dl
-import imageLinker
+import metaDataAndMove
 import os
 import youtubeURLGrabber
 import time
+import sys
 
 subReddits = ["FutureSynth", "FutureBass", "Glitch", "Trap", "House", "ElectroHouse", "NewRetroWave", "Outrun", "Synthwave"]
 # subReddits = ["electrohouse"]
 
-def gatherNewURLs():
+def gatherNewRedditURLs():
 	global subReddits
 	database.initDB()
 
 	# download reddit urls
 	for subReddit in subReddits:
 		print("getting urls for", subReddit)
-		urlList = reddit.getHot(subReddit, 50) + reddit.getTopAll(subReddit, 100)
+		# urlList = reddit.getHot(subReddit, 50) + reddit.getTopAll(subReddit, 100)
+		urlList = reddit.getTopAll(subReddit, 1)
 		for url in urlList:
 			database.addURL(url, subReddit)
 
 		database.saveDB()
-
 
 def downloadURLs():
 	database.initDB()
@@ -43,20 +44,30 @@ def downloadURLs():
 			with youtube_dl.YoutubeDL(ydl_opts) as ydl:
 				vals = ydl.download([url])
 				print(vals)
-			imageLinker.addImagesToSongs(group, ".mp3")
-
 		except:
 			database.markURLAsFucked(url, group)
 			database.saveDB()
 			continue;
 
+		metaDataAndMove.addImagesToSongs(group)
+
 		database.markURLAsClosed(url, group)
 
 		database.saveDB()
-		os.system('cls' if os.name == 'nt' else 'clear')
+		# os.system('cls' if os.name == 'nt' else 'clear')
 
-# gatherNewURLs()
-# downloadURLs()
+database.initDB()
+database.reOpenAllClosed()
+database.saveDB()
 
-youtubeURLGrabber.addYouTubeCuratorURLs()
+if __name__ == "__main__":
+	if "-r" in sys.argv:
+		gatherNewRedditURLs()
+
+	if "-y" in sys.argv:
+		youtubeURLGrabber.addYouTubeCuratorURLs()
+
+	if "-u" in sys.argv:
+		downloadURLs()
+
 # downloadURLs()
