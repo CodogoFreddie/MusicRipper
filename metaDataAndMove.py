@@ -1,6 +1,5 @@
 import subprocess
 import os
-import SeamCarving
 
 def addImagesToSongs(group):
 	audioFormats = ["mp3", "ogg", "acc", "m4a"]
