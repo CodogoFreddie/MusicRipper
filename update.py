@@ -26,8 +26,7 @@ def gatherNewRedditURLs():
 	for subReddit_ in subReddits:
 		subReddit = subReddit_[0]
 		print("getting urls for", subReddit)
-		# urlList = reddit.getHot(subReddit, 50) + reddit.getTopAll(subReddit, 100)
-		urlList = reddit.getTopAll(subReddit, 1)
+		urlList = reddit.getHot(subReddit, 50) + reddit.getTopAll(subReddit, 100) + reddit.getTopMonth(subReddit, 500)
 		for url in urlList:
 			database.addURL(url, subReddit_)
 
