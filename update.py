@@ -7,20 +7,29 @@ import youtubeURLGrabber
 import time
 import sys
 
-subReddits = ["FutureSynth", "FutureBass", "Glitch", "Trap", "House", "ElectroHouse", "NewRetroWave", "Outrun", "Synthwave"]
-# subReddits = ["electrohouse"]
+subReddits = []
+subReddits.append( ("FutureSynth", "Genre") )
+subReddits.append( ("FutureBass", "Genre") )
+subReddits.append( ("Glitch", "Genre") )
+subReddits.append( ("Trap", "Genre") )
+subReddits.append( ("House", "Genre") )
+subReddits.append( ("ElectroHouse", "Genre") )
+subReddits.append( ("NewRetroWave", "Genre") )
+subReddits.append( ("Outrun", "Genre") )
+subReddits.append( ("Synthwave", "Genre") )
 
 def gatherNewRedditURLs():
 	global subReddits
 	database.initDB()
 
 	# download reddit urls
-	for subReddit in subReddits:
+	for subReddit_ in subReddits:
+		subReddit = subReddit_[0]
 		print("getting urls for", subReddit)
 		# urlList = reddit.getHot(subReddit, 50) + reddit.getTopAll(subReddit, 100)
 		urlList = reddit.getTopAll(subReddit, 1)
 		for url in urlList:
-			database.addURL(url, subReddit)
+			database.addURL(url, subReddit_)
 
 		database.saveDB()
 
@@ -39,26 +48,22 @@ def downloadURLs():
 		ydl_opts['flat_playlist'] = True
 		ydl_opts['extract_flat'] = 'in_playlist'
 		ydl_opts['noplaylist'] = 'True'
+		ydl_opts['writeinfojson'] = 'True'
 
 		try:
 			with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-				vals = ydl.download([url])
-				print(vals)
+				ydl.download([url])
+				metaDataAndMove.addImagesToSongs(group)
 		except:
 			database.markURLAsFucked(url, group)
 			database.saveDB()
 			continue;
 
-		metaDataAndMove.addImagesToSongs(group)
 
 		database.markURLAsClosed(url, group)
-
 		database.saveDB()
-		# os.system('cls' if os.name == 'nt' else 'clear')
 
-database.initDB()
-database.reOpenAllClosed()
-database.saveDB()
+		# os.system('cls' if os.name == 'nt' else 'clear')
 
 if __name__ == "__main__":
 	if "-r" in sys.argv:
