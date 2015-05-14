@@ -6,6 +6,8 @@ import threading
 
 youTubeMainPageURLs = {}
 youTubeMainPageURLs[ ("ArcticEmpire", "Curator") ] = "https://www.youtube.com/user/sheepsempire/videos"  
+youTubeMainPageURLs[ ("AirwaveMusic", "Curator") ] = "https://www.youtube.com/user/AirwaveMusicTV/videos"  
+youTubeMainPageURLs[ ("TrapCity", "Curator") ] = "https://www.youtube.com/user/OfficialTrapCity/videos"  
 youTubeMainPageURLs[ ("ThatNewRave", "Curator") ] = "http://www.youtube.com/user/ThatNewRave/videos"  
 youTubeMainPageURLs[ ("MrSuicideSheep", "Curator") ] = "http://www.soundcloud.com/mrsuicidesheep/"
 youTubeMainPageURLs[ ("FutureClassic", "Curator") ] = "https://soundcloud.com/futureclassic/"
