@@ -5,8 +5,9 @@ db = {}
 
 def initDB():
 	global db
-	for i in range(2,7):
+	for i in range(1,7):
 		try:
+			print("download.db." + str(i))
 			dbFile = open("download.db." + str(i), 'r')
 			db = yaml.load(dbFile)
 			dbFile.close()
@@ -18,21 +19,17 @@ def initDB():
 
 def nextURLToDownload():
 	global db
-	while True:
-		for group in db["open"]:
-			if len(db["open"][group]) > 0:
-				yieldURL = db["open"][group][0]
-				yield (group, yieldURL)
-				db["open"][group] = db["open"][group][1:]
-			else:
-				anyLeft = False
-				for group in db["open"]:
-					if len(db["open"][group]) > 0:
-						anyLeft = True
-				if anyLeft:
-					continue
-				else:
-					return
+	looping = True
+	while looping:
+		#check there are still some groups with things in them:
+		numberOfOpenLinks = sum(list(map(lambda x: len(db["open"][x]), db["open"].keys())))
+		print(numberOfOpenLinks)
+		if numberOfOpenLinks == 0:
+			looping = False
+		else:
+			for group in db["open"].keys():
+				if len(db["open"][group]):
+					yield (group, db["open"][group][0])
 
 def ensureGroupExists(group):
 	global db
