@@ -9,7 +9,6 @@ def getHot(subReddit, n):
 	returnList = []
 	for submission in subreddit.get_hot(limit=n):
 		try:
-			print(str('\t' + submission.url))
 			if "reddit" not in submission.url:
 				returnList = returnList + [submission.url]
 		except:
@@ -23,7 +22,6 @@ def getTopAll(subReddit, n):
 	returnList = []
 	for submission in subreddit.get_top_from_all(limit=n):
 		try:
-			print(str('\t' + submission.url))
 			if "reddit" not in submission.url:
 				returnList = returnList + [submission.url]
 		except:
@@ -37,7 +35,6 @@ def getTopWeek(subReddit, n):
 	returnList = []
 	for submission in subreddit.get_top_from_week(limit=n):
 		try:
-			print(str('\t' + submission.url))
 			if "reddit" not in submission.url:
 				returnList = returnList + [submission.url]
 		except:
@@ -51,7 +48,6 @@ def getTopMonth(subReddit, n):
 	returnList = []
 	for submission in subreddit.get_top_from_all(limit=n):
 		try:
-			print(str('\t' + submission.url))
 			if "reddit" not in submission.url:
 				returnList = returnList + [submission.url]
 		except:
