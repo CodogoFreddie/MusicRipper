@@ -88,6 +88,8 @@ def getInfo(jsonSRC):
 	info[' '] = audioFileName[0]
 	info['--ti'] = imageFileName[0]
 
+	subprocess.call(["rm", jsonSRC])
+
 	return info
 
 def sortOutImage(src):
@@ -104,7 +106,4 @@ def sortOutImage(src):
 
 	subprocess.call(["convert", src, "-scale", str(scaleWidth) + 'x' + str(scaledHeight), src])
 
-	carvedWidth = min(scaleWidth, scaledHeight)
-	carvedHeight = min(scaleWidth, scaledHeight)
-
-	subprocess.call(["python2", "SeamCarving.py", str(src), str(src), str(carvedWidth), str(carvedHeight)])
+	subprocess.call(["convert", src, "-liquid-rescale", "500x500!", src])
