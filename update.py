@@ -11,7 +11,6 @@ subReddits = []
 subReddits.append( ("FutureSynth", "Genre") )
 subReddits.append( ("FutureBass", "Genre") )
 subReddits.append( ("Glitch", "Genre") )
-subReddits.append( ("Trap", "Genre") )
 subReddits.append( ("House", "Genre") )
 subReddits.append( ("ElectroHouse", "Genre") )
 subReddits.append( ("NewRetroWave", "Genre") )

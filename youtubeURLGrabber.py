@@ -22,6 +22,7 @@ youTubeMainPageURLs[ ("Pegboardnerds", "Artist") ] = "http://www.soundcloud.com/
 youTubeMainPageURLs[ ("Madeon", "Artist") ] = "http://www.soundcloud.com/madeon/" 
 youTubeMainPageURLs[ ("Kygo", "Artist") ] = "http://www.soundcloud.com/kygo/" 
 youTubeMainPageURLs[ ("Jai Wolf", "Artist") ] = "https://soundcloud.com/jaiwolfmusic/tracks"
+youTubeMainPageURLs[ ("Daktyl", "Artist") ] = "https://soundcloud.com/daktylmusic"
 def doTheThing(page):
 	global youTubeMainPageURLs
 
