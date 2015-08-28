@@ -39,9 +39,6 @@ def downloadURLs():
 		(group, url) = thing
 		print('\t' + "trying to download", url, "to", group)
 
-		url = "https://youtu.be/9mnoiRqh0dQ"
-		print(group)
-
 		argsList = ["youtube-dl"]
 		argsList.extend([url])
 		# argsList.extend(["--restrict-filenames"])
