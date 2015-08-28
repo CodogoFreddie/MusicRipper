@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 import database
 import reddit
 import youtube_dl
