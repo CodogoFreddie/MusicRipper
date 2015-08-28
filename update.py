@@ -3,11 +3,12 @@
 import database
 import reddit
 import youtube_dl
-import metaDataAndMove
+import postProcess
 import os
 import youtubeURLGrabber
 import time
 import sys
+from subprocess import call
 
 subReddits = []
 subReddits.append( ("FutureSynth", "Genre") )
@@ -37,29 +38,25 @@ def downloadURLs():
 	for thing in database.nextURLToDownload():
 		(group, url) = thing
 		print('\t' + "trying to download", url, "to", group)
-		ydl_opts = {}
-		ydl_opts['format'] = 'bestaudio/best'
-		ydl_opts['postprocessors'] = [{'key': 'FFmpegExtractAudio', 'preferredcodec': 'mp3', 'preferredquality': '192'}]
-		ydl_opts['simulate']= False
-		ydl_opts['writethumbnail'] = True
-		ydl_opts['write_all_thumbnails'] = True
-		ydl_opts['flat_playlist'] = True
-		ydl_opts['extract_flat'] = 'in_playlist'
-		ydl_opts['noplaylist'] = 'True'
-		ydl_opts['writeinfojson'] = 'True'
 
-		try:
-			with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-				ydl.download([url])
-				metaDataAndMove.addImagesToSongs(group)
-		except:
-			database.markURLAsFucked(url, group)
-			database.saveDB()
-			continue;
+		url = "https://youtu.be/9mnoiRqh0dQ"
+		print(group)
 
+		argsList = ["youtube-dl"]
+		argsList.extend([url])
+		# argsList.extend(["--restrict-filenames"])
+		argsList.extend(["--write-info-json"])
+		argsList.extend(["--write-thumbnail"])
+		argsList.extend(["--output", "Staging/%(id)s.%(ext)s"])
+		argsList.extend(["--extract-audio"])
+		argsList.extend(["--audio-format", "mp3"])
+		argsList.extend(["--youtube-skip-dash-manifest"])
 
-		database.markURLAsClosed(url, group)
-		database.saveDB()
+		call(argsList)
+
+		postProcess.PostProcess(group)
+
+		break
 
 		# os.system('cls' if os.name == 'nt' else 'clear')
 
