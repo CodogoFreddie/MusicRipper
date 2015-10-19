@@ -39,26 +39,28 @@ def downloadURLs():
 		(group, url) = thing
 		print('\t' + "trying to download", url, "to", group)
 
-		argsList = ["youtube-dl"]
-		argsList.extend([url])
-		# argsList.extend(["--restrict-filenames"])
-		argsList.extend(["--write-info-json"])
-		argsList.extend(["--write-thumbnail"])
-		argsList.extend(["--output", "Staging/%(id)s.%(ext)s"])
-		argsList.extend(["--extract-audio"])
-		argsList.extend(["--audio-format", "mp3"])
-		argsList.extend(["--youtube-skip-dash-manifest"])
+		try:
+			argsList = ["youtube-dl"]
+			argsList.extend([url])
+			# argsList.extend(["--restrict-filenames"])
+			argsList.extend(["--write-info-json"])
+			argsList.extend(["--write-thumbnail"])
+			argsList.extend(["--output", "Staging/%(id)s.%(ext)s"])
+			argsList.extend(["--extract-audio"])
+			argsList.extend(["--audio-format", "mp3"])
+			argsList.extend(["--youtube-skip-dash-manifest"])
 
-		call(argsList)
+			call(argsList)
 
-		postProcess.PostProcess(group)
-		call(["rm", "-rf", "Staging"])
-		call(["mkdir", "Staging"])
-		break
+			postProcess.PostProcess(group)
+			call(["rm", "-rf", "Staging"])
+			call(["mkdir", "Staging"])
 
-		database.markURLAsClosed(url, group)
-		database.saveDB()
-
+			database.markURLAsClosed(url, group)
+			database.saveDB()
+		except:
+			database.markURLAsFucked(url, group)
+			database.saveDB()
 		# os.system('cls' if os.name == 'nt' else 'clear')
 
 if __name__ == "__main__":
