@@ -52,8 +52,12 @@ def downloadURLs():
 		call(argsList)
 
 		postProcess.PostProcess(group)
-
+		call(["rm", "-rf", "Staging"])
+		call(["mkdir", "Staging"])
 		break
+
+		database.markURLAsClosed(url, group)
+		database.saveDB()
 
 		# os.system('cls' if os.name == 'nt' else 'clear')
 
