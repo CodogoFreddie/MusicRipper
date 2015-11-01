@@ -5,21 +5,17 @@ import threading
 
 
 youTubeMainPageURLs = {}
-youTubeMainPageURLs[ ("ArcticEmpire", "Curator") ] = "https://www.youtube.com/user/sheepsempire/videos"  
-youTubeMainPageURLs[ ("AirwaveMusic", "Curator") ] = "https://www.youtube.com/user/AirwaveMusicTV/videos"  
-youTubeMainPageURLs[ ("TrapCity", "Curator") ] = "https://www.youtube.com/user/OfficialTrapCity/videos"  
-youTubeMainPageURLs[ ("MrSuicideSheep", "Curator") ] = "http://www.soundcloud.com/mrsuicidesheep/"
-youTubeMainPageURLs[ ("FutureClassic", "Curator") ] = "https://soundcloud.com/futureclassic/tracks"
-youTubeMainPageURLs[ ("TheSoundYouNeed", "Curator") ] = "https://www.youtube.com/user/thesoundyouneed1/videos"  
-youTubeMainPageURLs[ ("EOENetwork", "Curator") ] = "http://www.youtube.com/user/EOENetwork/videos"  
-youTubeMainPageURLs[ ("SummerBreeze", "Curator") ] = "https://www.youtube.com/user/Summerbreezemusik/videos"  
-youTubeMainPageURLs[ ("BigDataBigData", "Artist") ] = "https://www.youtube.com/user/BigDataBigData/videos"  
-youTubeMainPageURLs[ ("Pegboardnerds", "Artist") ] = "http://www.soundcloud.com/pegboardnerds/" 
-youTubeMainPageURLs[ ("Madeon", "Artist") ] = "http://www.soundcloud.com/madeon/" 
-youTubeMainPageURLs[ ("Kygo", "Artist") ] = "http://www.soundcloud.com/kygo/" 
-youTubeMainPageURLs[ ("Jai Wolf", "Artist") ] = "https://soundcloud.com/jaiwolfmusic/tracks"
+youTubeMainPageURLs[ ("ArcticEmpire", "Curator") ] = "https://www.youtube.com/user/sheepsempire/videos"
+youTubeMainPageURLs[ ("AirwaveMusic", "Curator") ] = "https://www.youtube.com/user/AirwaveMusicTV/videos"
+youTubeMainPageURLs[ ("TrapCity", "Curator") ] = "https://www.youtube.com/user/OfficialTrapCity/videos"
+youTubeMainPageURLs[ ("MrSuicideSheep", "Curator") ] = "https://www.youtube.com/user/MrSuicideSheep"
+youTubeMainPageURLs[ ("TheSoundYouNeed", "Curator") ] = "https://www.youtube.com/user/thesoundyouneed1/videos"
+youTubeMainPageURLs[ ("EOENetwork", "Curator") ] = "http://www.youtube.com/user/EOENetwork/videos"
+youTubeMainPageURLs[ ("SummerBreeze", "Curator") ] = "https://www.youtube.com/user/Summerbreezemusik/videos"
+youTubeMainPageURLs[ ("BigDataBigData", "Artist") ] = "https://www.youtube.com/user/BigDataBigData/videos"
+youTubeMainPageURLs[ ("Madeon", "Artist") ] = "https://www.youtube.com/user/MadeonVEVO/video"
+youTubeMainPageURLs[ ("Kygo", "Artist") ] = "https://www.youtube.com/user/KygoOfficialVEVO/video"
 youTubeMainPageURLs[ ("Pentatonix", "Artist") ] = "https://www.youtube.com/user/PTXofficial/videos"
-youTubeMainPageURLs[ ("Daktyl", "Artist") ] = "https://soundcloud.com/daktylmusic"
 def doTheThing(page):
 	global youTubeMainPageURLs
 
