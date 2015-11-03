@@ -91,6 +91,6 @@ def PostProcess(group):
 	(infoFileName, thumbnailFileName, audioFileName) = getFileNames()
 	metaData = getMetaData(infoFileName)
 	metaData = tryToAnaliseTitle(metaData)
-	squareifyImage("Staging/"+thumbnailFileName)
+	# squareifyImage("Staging/"+thumbnailFileName)
 	tags = tagify(metaData, group, "Staging/"+thumbnailFileName)
 	combineAndProcess(group[0], audioFileName, tags)
