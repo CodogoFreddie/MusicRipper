@@ -44,11 +44,14 @@ def addURL(urlString, group):
 	global db
 	ensureGroupExists(group)
 	if urlString in db["open"][group]:
-		print('\t' + "allready marked to download", urlString)
+		pass
+	# 	print('\t' + "allready marked to download", urlString)
 	elif urlString in db["closed"][group]:
-		print('\t' + "allready downloaded", urlString)
+		pass
+	# 	print('\t' + "allready downloaded", urlString)
 	elif urlString in db["fucked"][group]:
-		print('\t' + "link is fucked", urlString)
+		pass
+	# 	print('\t' + "link is fucked", urlString)
 	else:
 		db["open"][group].append(urlString)
 
@@ -87,8 +90,8 @@ def reOpenAllClosed():
 			print(item)
 			db["closed"][group].remove(item)
 			db["open"][group].append(item)
-	
-			
+
+
 
 def saveDB():
 	global db
@@ -104,4 +107,3 @@ def saveDB():
 def printDB():
 	global db
 	print('\t' + db)
-
