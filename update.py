@@ -17,6 +17,7 @@ subReddits.append( ("Glitch", "Genre") )
 subReddits.append( ("House", "Genre") )
 subReddits.append( ("ElectroHouse", "Genre") )
 subReddits.append( ("NewRetroWave", "Genre") )
+subReddits.append( ("TropicalHouse", "Genre") )
 
 def gatherNewRedditURLs():
 	global subReddits
