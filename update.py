@@ -14,6 +14,7 @@ subReddits = []
 subReddits.append( ("FutureSynth", "Genre") )
 subReddits.append( ("FutureBass", "Genre") )
 subReddits.append( ("Glitch", "Genre") )
+subReddits.append( ("Vaporwave", "Genre") )
 subReddits.append( ("House", "Genre") )
 subReddits.append( ("ElectroHouse", "Genre") )
 subReddits.append( ("NewRetroWave", "Genre") )
@@ -27,7 +28,7 @@ def gatherNewRedditURLs():
 	for subReddit_ in subReddits:
 		subReddit = subReddit_[0]
 		print("getting urls for", subReddit)
-		urlList = reddit.getHot(subReddit, 50) + reddit.getTopMonth(subReddit, 50)
+		urlList = reddit.getHot(subReddit, 100) + reddit.getTopMonth(subReddit, 100)
 		for url in urlList:
 			database.addURL(url, subReddit_)
 
