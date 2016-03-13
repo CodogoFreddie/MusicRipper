@@ -5,7 +5,6 @@ import threading
 
 
 youTubeMainPageURLs = {}
-youTubeMainPageURLs[ ("AirwaveMusic", "Curator") ] = "https://www.youtube.com/user/AirwaveMusicTV/videos"
 youTubeMainPageURLs[ ("TrapCity", "Curator") ] = "https://www.youtube.com/user/OfficialTrapCity/videos"
 youTubeMainPageURLs[ ("MrSuicideSheep", "Curator") ] = "https://www.youtube.com/user/MrSuicideSheep"
 youTubeMainPageURLs[ ("TheSoundYouNeed", "Curator") ] = "https://www.youtube.com/user/thesoundyouneed1/videos"
@@ -19,7 +18,7 @@ def doTheThing(page):
 	global youTubeMainPageURLs
 
 	print("downloading all URLs for", page)
-	jsonData = str(subprocess.check_output(["youtube-dl", "-J", "--flat-playlist", youTubeMainPageURLs[page]]))
+	jsonData = str(subprocess.check_output(["youtube-dl", "-J", "--flat-playlist", "--dateafter", "now+10week", youTubeMainPageURLs[page]]))
 	print("got data for", page)
 
 	if "youtube" in youTubeMainPageURLs[page]:
