@@ -11,13 +11,10 @@ import sys
 from subprocess import call
 
 subReddits = []
-subReddits.append( ("FutureSynth", "Genre") )
 subReddits.append( ("FutureBass", "Genre") )
 subReddits.append( ("Glitch", "Genre") )
 subReddits.append( ("Vaporwave", "Genre") )
 subReddits.append( ("House", "Genre") )
-subReddits.append( ("ElectroHouse", "Genre") )
-subReddits.append( ("NewRetroWave", "Genre") )
 subReddits.append( ("TropicalHouse", "Genre") )
 
 def gatherNewRedditURLs():
