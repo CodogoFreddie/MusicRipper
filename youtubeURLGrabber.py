@@ -5,16 +5,13 @@ import threading
 
 
 youTubeMainPageURLs = {}
-youTubeMainPageURLs[ ("TrapCity", "Curator") ] = "https://www.youtube.com/user/OfficialTrapCity/videos"
 youTubeMainPageURLs[ ("MrSuicideSheep", "Curator") ] = "https://www.youtube.com/user/MrSuicideSheep"
 youTubeMainPageURLs[ ("TheSoundYouNeed", "Curator") ] = "https://www.youtube.com/user/thesoundyouneed1/videos"
-youTubeMainPageURLs[ ("EOENetwork", "Curator") ] = "http://www.youtube.com/user/EOENetwork/videos"
 youTubeMainPageURLs[ ("BigDataBigData", "Artist") ] = "https://www.youtube.com/user/BigDataBigData/videos"
 youTubeMainPageURLs[ ("Madeon", "Artist") ] = "https://www.youtube.com/user/MadeonVEVO/video"
 youTubeMainPageURLs[ ("Kygo", "Artist") ] = "https://www.youtube.com/user/KygoOfficialVEVO/video"
 youTubeMainPageURLs[ ("Pentatonix", "Artist") ] = "https://www.youtube.com/user/PTXofficial/videos"
 youTubeMainPageURLs[ ("Disciples", "Artist") ] = "https://www.youtube.com/user/DisciplesLDN/videos"
-youTubeMainPageURLs[ ("ElectronicGems", "Curator") ] = "https://www.youtube.com/user/HungOverGargoyle/videos"
 youTubeMainPageURLs[ ("VulfPeck", "Artist") ] = "https://www.youtube.com/user/DJparadiddle/videos"
 youTubeMainPageURLs[ ("MajesticCasual", "Curator") ] = "https://www.youtube.com/user/majesticcasual/videos"
 def doTheThing(page):
