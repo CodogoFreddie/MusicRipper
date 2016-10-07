@@ -16,6 +16,7 @@ youTubeMainPageURLs[ ("Pentatonix", "Artist") ] = "https://www.youtube.com/user/
 youTubeMainPageURLs[ ("Disciples", "Artist") ] = "https://www.youtube.com/user/DisciplesLDN/videos"
 youTubeMainPageURLs[ ("ElectronicGems", "Curator") ] = "https://www.youtube.com/user/HungOverGargoyle/videos"
 youTubeMainPageURLs[ ("VulfPeck", "Artist") ] = "https://www.youtube.com/user/DJparadiddle/videos"
+youTubeMainPageURLs[ ("MajesticCasual", "Curator") ] = "https://www.youtube.com/user/majesticcasual/videos"
 def doTheThing(page):
 	global youTubeMainPageURLs
 
