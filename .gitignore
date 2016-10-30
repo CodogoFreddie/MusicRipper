@@ -56,7 +56,6 @@ docs/_build/
 # PyBuilder
 target/
 
-download.db.2
 download.db.3
 download.db.4
 download.db.5
